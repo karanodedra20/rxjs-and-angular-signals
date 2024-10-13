@@ -19,7 +19,7 @@ To get started with this project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/rxjs-and-angular-signals.git
+   git clone https://github.com/karanodedra20/rxjs-and-angular-signals.git
    ```
 2. Navigate to the project directory:
    ```bash
