@@ -11,7 +11,7 @@ This repository contains a project that demonstrates the integration of RxJS wit
 
 ## Introduction
 
-This project aims to provide a comprehensive example of how to use RxJS with Angular Signals to build reactive and efficient Angular applications. It includes various examples and use cases to help you understand the concepts better.
+This project aims to provide a comprehensive example of how to use RxJS with Angular Signals to build reactive and efficient Angular applications. It includes various examples and use cases to help understand the concepts better.
 
 ## Installation
 
