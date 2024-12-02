@@ -1,6 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { catchError, map, Observable, of, switchMap, throwError } from "rxjs";
+import {
+  catchError,
+  map,
+  Observable,
+  of,
+  shareReplay,
+  switchMap,
+  throwError,
+} from "rxjs";
 import { Product } from "./product";
 import { HttpErrorService } from "../utilities/http-error.service";
 import { ReviewService } from "../reviews/review.service";
@@ -16,9 +24,10 @@ export class ProductService {
   private errorService = inject(HttpErrorService);
   private reviewService = inject(ReviewService);
 
-  readonly products$ = this.http
-    .get<Product[]>(this.productsUrl)
-    .pipe(catchError((err) => this.handleError(err)));
+  readonly products$ = this.http.get<Product[]>(this.productsUrl).pipe(
+    shareReplay(1),
+    catchError((err) => this.handleError(err))
+  );
 
   getproduct(id: number): Observable<Product> {
     const productUrl = this.productsUrl + "/" + id;
