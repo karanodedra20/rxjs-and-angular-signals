@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
+import { CartService } from "./cart/cart.service";
 
 @Component({
   selector: "app-root",
@@ -9,6 +10,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
   styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = "ShoppyCart";
-  cartCount = 0;
+  title = "Shoppy Cart";
+
+  private cartService = inject(CartService);
+
+  cartCount = this.cartService.cartCount;
 }
